@@ -10,11 +10,11 @@ class conexao_oracle:
     def connect(self):
         try:
             if self.database == "dvm":
-                self.con = cx_Oracle.connect("corporativo/semestre19@c0827dvm")
+                self.con = cx_Oracle.connect("user/senha@banco")
             elif self.database == "sta":
-                self.con = cx_Oracle.connect("usertrac/trac840820.@c0828sta")
+                self.con = cx_Oracle.connect("user/senha@banco")
             elif self.database == "prd":
-                self.con = cx_Oracle.connect("usertrac/trac840820.@c0090prd")
+                self.con = cx_Oracle.connect("user/senha@banco")
         except Exception as e:
             logger.error(f"Erro connect oracle - database: {self.database} erro: {e}")
             # self.send_email(
