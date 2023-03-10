@@ -18,8 +18,8 @@ class geracao_PDF:
         if ambiente == "hom":
             self.database = "sta"
             self.motor_reports = "C:\orant\BIN\RWRUN60.EXE"
-            self.user_id = "USERID=usertrac/trac840820.@c0828sta"
-            self.caminho_relatorio = "MODULE=//c0828/obj_pc/usr/procger/CCME/"
+            self.user_id = "USERID=user/senha@banco"
+            self.caminho_relatorio = "MODULE=//servidor/obj_pc/usr/procger/CCME/"
 
         ############################################
         # PRODUÇÃO
@@ -27,8 +27,8 @@ class geracao_PDF:
         elif ambiente == "prd":
             self.database = "prd"
             self.motor_reports = "C:\orant\BIN\RWRUN60.EXE"
-            self.user_id = "USERID=usertrac/trac840820.@c0090prd"
-            self.caminho_relatorio = "MODULE=//c0090/obj_pc/usr/procger/CCME/"
+            self.user_id = "USERID=user/senha@banco"
+            self.caminho_relatorio = "MODULE=//servidor/obj_pc/usr/procger/CCME/"
 
         ############################################
         # PARAMETROS GERAIS
@@ -52,7 +52,7 @@ class geracao_PDF:
         try:
             executa_novamente = 1
             while executa_novamente > 0:
-                # ds_relatorio = 'MODULE=//c0828/obj_pc/usr/procger/CCME/' + result_arq[3] + '.rep'
+                # ds_relatorio = 'MODULE=//servidor/obj_pc/usr/procger/CCME/' + result_arq[3] + '.rep'
                 ds_relatorio = self.caminho_relatorio + result_arq[3] + ".rep"
                 ds_parametros_relatorio = result_arq[4]
                 ds_arquivo_PDF = "DESNAME=" + result_arq[5]
